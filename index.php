@@ -20,19 +20,19 @@ require_once __DIR__ . '/data/db.php';
     <div class="container">
         <div class="row">
             <h2>Alimenti disponibili:</h2>
+            <!-- ciclo -->
                 <?php foreach( $foods as $food ) { ?>
                     <div class="card" style="width: 18rem;">
                     <img src="<?php echo $food->imgurl?>" class="card-img-top" alt="<?php echo $food->getName()?>">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $food->getName();?></h5>
-
-                        <h5 class="card-title">Per: <?php foreach ( $food->categories as $category) {?>
-                            <span><?php echo $category->getGraphic('gatto');?></span>
-                        <?php }?> </h5>                        
-                        <h5 class="card-title">Prezzo: <?php echo $food->getCost();?>€</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $food->getName();?></h5>
+                            <h5 class="card-title">Per: <?php foreach ( $food->categories as $category) {?>
+                                <span><?php echo $category->getGraphic($category->animal_name);?></span>
+                            <?php }?> </h5>                        
+                            <h5 class="card-title">Prezzo: <?php echo $food->getCost();?>€</h5>
+                        </div>
                     </div>
                 <?php } ?>
-            </div>
         </div>
     </div>
 </body>

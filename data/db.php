@@ -19,5 +19,6 @@ $games = [
 ];
 
 $houses = [
-
+    new House('VidaXl', 100, [$dog], 'https://www.vidaxl.it/dw/image/v2/BFNS_PRD/on/demandware.static/-/Sites-vidaxl-catalog-master-sku/default/dw2d92b137/hi-res/1/2/5/5094/45151/image_1_45151.jpg?sw=400', 'Cane Felice', 'XXL'),
+    new House('Casetta Gatta', 212, [$cat], 'https://i.ebayimg.com/images/g/1J4AAOSw7X1jPriW/s-l500.jpg', 'Zoo Plus', 'M'),
 ];

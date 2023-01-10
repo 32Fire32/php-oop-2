@@ -26,10 +26,47 @@ require_once __DIR__ . '/data/db.php';
                     <img src="<?php echo $food->imgurl?>" class="card-img-top" alt="<?php echo $food->getName()?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $food->getName();?></h5>
+                            <h6><?php echo $food->brand;?></h6>
                             <h5 class="card-title">Per: <?php foreach ( $food->categories as $category) {?>
                                 <span><?php echo $category->getGraphic($category->animal_name);?></span>
                             <?php }?> </h5>                        
                             <h5 class="card-title">Prezzo: <?php echo $food->getCost();?>€</h5>
+                        </div>
+                    </div>
+                <?php } ?>
+        </div>
+        <div class="row">
+            <h2>Giochi disponibili:</h2>
+            <!-- ciclo -->
+                <?php foreach( $games as $game ) { ?>
+                    <div class="card" style="width: 18rem;">
+                    <img src="<?php echo $game->imgurl?>" class="card-img-top" alt="<?php echo $game->getName()?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $game->getName();?></h5>
+                            <h6><?php echo $game->brand;?></h6>
+                            <h5 class="card-title">Per: <?php foreach ( $game->categories as $category) {?>
+                                <span><?php echo $category->getGraphic($category->animal_name);?></span>
+                            <?php }?> </h5>                        
+                            <h5 class="card-title">Prezzo: <?php echo $game->getCost();?>€</h5>
+                            <p><?php echo $game->description; ?></p>
+                        </div>
+                    </div>
+                <?php } ?>
+        </div>
+        <div class="row">
+            <h2>Cucce disponibili:</h2>
+            <!-- ciclo -->
+                <?php foreach( $houses as $house ) { ?>
+                    <div class="card" style="width: 18rem;">
+                    <img src="<?php echo $house->imgurl?>" class="card-img-top" alt="<?php echo $house->getName()?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $house->getName();?></h5>
+                            <h6><?php echo $house->brand;?></h6>
+                            <h5 class="card-title">Per: <?php foreach ( $house->categories as $category) {?>
+                                <span><?php echo $category->getGraphic($category->animal_name);?></span>
+                            <?php }?> </h5>                        
+                            <h5 class="card-title">Prezzo: <?php echo $house->getCost();?>€</h5>
+                            <p>Dimensioni:<?php echo $house->size; ?></p>
                         </div>
                     </div>
                 <?php } ?>

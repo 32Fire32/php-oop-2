@@ -29,23 +29,14 @@ require_once __DIR__ . '/data/db.php';
                             <h6><?php echo $food->brand;?></h6>
                             <h5 class="card-title">Per:<?php echo $food->categories->graphic;?></h5>                        
                             <h5 class="card-title">Prezzo: <?php echo $food->getCost();?>€</h5>
-                            <h6>Disponibili: n.
-                            <?php 
-                            var_dump($food->n_items);
-                            try {
-                                $food->out_of_stock($food->n_items);
-                            } catch(Exception $e) {
-                                echo $e->getMessage();
-                            }
-                            ?></h6>
                         </div>
                     </div>
                 <?php } ?>
         </div>
-        <!-- <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-5">
             <h2>Giochi disponibili:</h2>
             <!-- ciclo -->
-                <!-- <?php foreach( $games as $game ) { ?>
+                <?php foreach( $games as $game ) { ?>
                     <div class="card" style="width: 18rem;">
                     <img src="<?php echo $game->imgurl?>" class="card-img-top" alt="<?php echo $game->getName()?>">
                         <div class="card-body">
@@ -54,15 +45,14 @@ require_once __DIR__ . '/data/db.php';
                             <h5 class="card-title">Per:<?php echo $food->categories->graphic;?></h5>                        
                             <h5 class="card-title">Prezzo: <?php echo $game->getCost();?>€</h5>
                             <p><?php echo $game->description; ?></p>
-                            <h6>Disponibili: n.<?php echo $game->n_items;?></h6>
                         </div>
                     </div>
-                <?php } ?> -->
+                <?php } ?>
         </div>
-        <!-- <div class="row justify-content-center mt-5"> -->
-            <!-- <h2>Cucce disponibili:</h2> -->
+        <div class="row justify-content-center mt-5">
+            <h2>Cucce disponibili:</h2>
             <!-- ciclo -->
-                <!-- <?php foreach( $houses as $house ) { ?>
+                <?php foreach( $houses as $house ) { ?>
                     <div class="card" style="width: 18rem;">
                     <img src="<?php echo $house->imgurl?>" class="card-img-top" alt="<?php echo $house->getName()?>">
                         <div class="card-body">
@@ -71,11 +61,10 @@ require_once __DIR__ . '/data/db.php';
                             <h5 class="card-title">Per:<?php echo $food->categories->graphic;?></h5>                        
                             <h5 class="card-title">Prezzo: <?php echo $house->getCost();?>€</h5>
                             <p>Dimensioni:<?php echo $house->size; ?></p>
-                            <h6>Disponibili: n.<?php echo $house->n_items;?></h6>
                         </div>
                     </div>
-                <?php } ?> -->
-        </div> -->
+                <?php } ?>
+        </div>
     </div>
 </body>
 </html>

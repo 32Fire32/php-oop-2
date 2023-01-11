@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '../../classes/stocks.php';
+require_once __DIR__ . '../../traits/stocks.php';
 require_once __DIR__ . '../../classes/Food.php';
 require_once __DIR__ . '../../classes/Game.php';
 require_once __DIR__ . '../../classes/House.php';

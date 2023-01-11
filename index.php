@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/data/db.php';
 
+
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +30,14 @@ require_once __DIR__ . '/data/db.php';
                             <h6><?php echo $food->brand;?></h6>
                             <h5 class="card-title">Per:<?php echo $food->categories->graphic;?></h5>                        
                             <h5 class="card-title">Prezzo: <?php echo $food->getCost();?>€</h5>
+                            <p>Quantità disponibili: 
+                                <?php 
+                                    try {
+                                        echo $food->out_of_stock($food->n_items); 
+                                    } catch (Exception $e){
+                                        echo $e->getMessage();
+                                    }
+                            ?></p>
                         </div>
                     </div>
                 <?php } ?>
@@ -42,9 +51,17 @@ require_once __DIR__ . '/data/db.php';
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $game->getName();?></h5>
                             <h6><?php echo $game->brand;?></h6>
-                            <h5 class="card-title">Per:<?php echo $food->categories->graphic;?></h5>                        
+                            <h5 class="card-title">Per:<?php echo $game->categories->graphic;?></h5>                        
                             <h5 class="card-title">Prezzo: <?php echo $game->getCost();?>€</h5>
                             <p><?php echo $game->description; ?></p>
+                            <p>Quantità disponibili: 
+                                <?php 
+                                    try {
+                                        echo $game->out_of_stock($game->n_items); 
+                                    } catch (Exception $e){
+                                        echo $e->getMessage();
+                                    }
+                            ?></p>
                         </div>
                     </div>
                 <?php } ?>
@@ -58,9 +75,17 @@ require_once __DIR__ . '/data/db.php';
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $house->getName();?></h5>
                             <h6><?php echo $house->brand;?></h6>
-                            <h5 class="card-title">Per:<?php echo $food->categories->graphic;?></h5>                        
+                            <h5 class="card-title">Per:<?php echo $house->categories->graphic;?></h5>                        
                             <h5 class="card-title">Prezzo: <?php echo $house->getCost();?>€</h5>
                             <p>Dimensioni:<?php echo $house->size; ?></p>
+                            <p>Quantità disponibili: 
+                                <?php 
+                                    try {
+                                        echo $house->out_of_stock($house->n_items); 
+                                    } catch (Exception $e){
+                                        echo $e->getMessage();
+                                    }
+                            ?></p>
                         </div>
                     </div>
                 <?php } ?>

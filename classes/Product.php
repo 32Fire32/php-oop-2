@@ -1,6 +1,7 @@
 <?php
 
 class Product {
+    use StockController;
     private $name;
     private $cost;
     public $dimensions;
@@ -9,12 +10,13 @@ class Product {
     public $imgurl;
     public $description;
 
-    public function __construct(string $name, int $cost, Category $categories, string $imgurl)
+    public function __construct(string $name, int $cost, Category $categories, string $imgurl, int $n_items)
     {
         $this->name = $name;
         $this->cost = $cost;
         $this->categories = $categories;
         $this->imgurl = $imgurl;
+        $this->n_items = $n_items;
     }
 
     public function setName($name){

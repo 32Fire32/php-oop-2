@@ -8,9 +8,9 @@ class Game extends Product {
     public $type;
     public $color;
 
-    public function __construct(string $name, int $cost, Category $categories, string $imgurl, string $brand, string $description)
+    public function __construct(string $name, int $cost, Category $categories, string $imgurl, int $n_items, string $brand, string $description)
     {
-        parent::__construct($name, $cost, $categories, $imgurl);
+        parent::__construct($name, $cost, $categories, $imgurl, $n_items);
         $this->brand = $brand;
         $this->description = $description;
     }

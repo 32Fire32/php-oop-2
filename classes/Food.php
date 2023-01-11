@@ -7,7 +7,7 @@ class Food extends Product {
     public $brand;
     public $type;
 
-    public function __construct(string $name, int $cost, array $categories, string $imgurl, string $brand, string $type)
+    public function __construct(string $name, int $cost, Category $categories, string $imgurl, string $brand, string $type)
     {
         parent::__construct($name, $cost, $categories, $imgurl);
         $this->brand = $brand;

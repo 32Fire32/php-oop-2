@@ -17,8 +17,8 @@ require_once __DIR__ . '/data/db.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
+    <div class="container text-center">
+        <div class="row justify-content-center">
             <h2>Alimenti disponibili:</h2>
             <!-- ciclo -->
                 <?php foreach( $foods as $food ) { ?>
@@ -27,15 +27,13 @@ require_once __DIR__ . '/data/db.php';
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $food->getName();?></h5>
                             <h6><?php echo $food->brand;?></h6>
-                            <h5 class="card-title">Per: <?php foreach ( $food->categories as $category) {?>
-                                <span><?php echo $category->getGraphic($category->animal_name);?></span>
-                            <?php }?> </h5>                        
+                            <h5 class="card-title">Per:<?php echo $food->categories->graphic;?></h5>                        
                             <h5 class="card-title">Prezzo: <?php echo $food->getCost();?>€</h5>
                         </div>
                     </div>
                 <?php } ?>
         </div>
-        <div class="row">
+        <div class="row justify-content-center mt-5">
             <h2>Giochi disponibili:</h2>
             <!-- ciclo -->
                 <?php foreach( $games as $game ) { ?>
@@ -44,16 +42,14 @@ require_once __DIR__ . '/data/db.php';
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $game->getName();?></h5>
                             <h6><?php echo $game->brand;?></h6>
-                            <h5 class="card-title">Per: <?php foreach ( $game->categories as $category) {?>
-                                <span><?php echo $category->getGraphic($category->animal_name);?></span>
-                            <?php }?> </h5>                        
+                            <h5 class="card-title">Per:<?php echo $food->categories->graphic;?></h5>                        
                             <h5 class="card-title">Prezzo: <?php echo $game->getCost();?>€</h5>
                             <p><?php echo $game->description; ?></p>
                         </div>
                     </div>
                 <?php } ?>
         </div>
-        <div class="row">
+        <div class="row justify-content-center mt-5">
             <h2>Cucce disponibili:</h2>
             <!-- ciclo -->
                 <?php foreach( $houses as $house ) { ?>
@@ -62,9 +58,7 @@ require_once __DIR__ . '/data/db.php';
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $house->getName();?></h5>
                             <h6><?php echo $house->brand;?></h6>
-                            <h5 class="card-title">Per: <?php foreach ( $house->categories as $category) {?>
-                                <span><?php echo $category->getGraphic($category->animal_name);?></span>
-                            <?php }?> </h5>                        
+                            <h5 class="card-title">Per:<?php echo $food->categories->graphic;?></h5>                        
                             <h5 class="card-title">Prezzo: <?php echo $house->getCost();?>€</h5>
                             <p>Dimensioni:<?php echo $house->size; ?></p>
                         </div>
